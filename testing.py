@@ -29,12 +29,12 @@ def place_marker(board, marker, position):
 
 def win_check(board,mark):
     
-    return ((board[7] == mark and board[8] == mark and board[9] == mark) or # across the top
-    (board[4] == mark and board[5] == mark and board[6] == mark) or # across the middle
-    (board[1] == mark and board[2] == mark and board[3] == mark) or # across the bottom
-    (board[7] == mark and board[4] == mark and board[1] == mark) or # down the middle
-    (board[8] == mark and board[5] == mark and board[2] == mark) or # down the middle
-    (board[9] == mark and board[6] == mark and board[3] == mark) or # down the right side
+    return ((board[7] == mark and board[8] == mark and board[9] == mark) or #  top
+    (board[4] == mark and board[5] == mark and board[6] == mark) or #  middle
+    (board[1] == mark and board[2] == mark and board[3] == mark) or # bottom
+    (board[7] == mark and board[4] == mark and board[1] == mark) or #  middle
+    (board[8] == mark and board[5] == mark and board[2] == mark) or #  middle
+    (board[9] == mark and board[6] == mark and board[3] == mark) or #  side
     (board[7] == mark and board[5] == mark and board[3] == mark) or # diagonal
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
 
@@ -71,7 +71,7 @@ def replay():
 print('Welcome to Tic Tac Toe!')
 
 while True:
-    # Reset the board
+    
     theBoard = [' '] * 10
     player1_marker, player2_marker = player_input()
     turn = choose_first()
@@ -86,7 +86,7 @@ while True:
 
     while game_on:
         if turn == 'Player 1':
-            # Player1's turn.
+            # Player1
             
             display_board(theBoard)
             position = player_choice(theBoard)
@@ -105,7 +105,7 @@ while True:
                     turn = 'Player 2'
 
         else:
-            # Player2's turn.
+            # Player2
             
             display_board(theBoard)
             position = player_choice(theBoard)
